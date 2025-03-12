@@ -1,0 +1,57 @@
+name: "Discourse Air (Custom)"
+about: "A customized version of the Discourse Air theme"
+version: "1.0"
+authors: "bugoftheworld"
+
+theme_version: 2.0
+
+# 如果你的主題包含桌面 & 行動版，請保留這些 component
+components:
+  - common
+  - desktop
+  - mobile
+
+# 加入你修改或新增的 CSS/JS/圖片檔案，確保這些檔案存在於你的 repo
+assets:
+  - assets/logo.svg
+  - assets/custom-style.css
+  - assets/custom-script.js
+
+# 自訂的 HBS 和 JS 檔案
+templates:
+  - discourse/connectors/above-main-container/custom-homepage-connector.hbs
+  - discourse/components/adduser.hbs
+  - discourse/components/cards.hbs
+  - discourse/components/category-list.hbs
+  - discourse/components/custom-homepage-content.hbs
+  - discourse/components/custom-topic-list.hbs
+  - discourse/components/maintenance-notification-bar.hbs
+  - discourse/components/news.hbs
+  - discourse/components/status.hbs
+  - discourse/connectors/before-header-panel/nav.hbs
+  - discourse/connectors/below-site-header/maintenance-notification-bar.hbs
+  - discourse/connectors/home-logo/after.hbs
+  - discourse/connectors/main-outlet-bottom/main-outlet-bottom-connector.hbs
+
+javascripts:
+  - discourse/initializers/customize.js
+  - discourse/components/adduser.js
+  - discourse/components/category-list.js
+  - discourse/components/custom-homepage-content.js
+  - discourse/components/custom-topic-list.js
+  - discourse/components/maintenance-notification-bar.js
+  - discourse/components/news.js
+  - discourse/components/status.js
+  - discourse/initializers/aboutpage-buttons.js
+  - discourse/initializers/activeUserLoggedInStatus.js
+  - discourse/initializers/category.js
+  - discourse/initializers/customize-edit-category-general.js
+  - discourse/initializers/init-topic-excerpts.js
+  - discourse/initializers/translation.js
+  - discourse/utility.js
+
+# 主題的顏色配置，可以根據需求修改
+color_schemes:
+  default:
+    primary: "0066CC"
+    secondary: "FFFFFF"
