@@ -1,20 +1,14 @@
-// custom search banner customizations
-.custom-search-banner-wrap {
+body .custom-search-banner-wrap {
   margin: 0 auto !important;
   max-width: unset;
   color: var(--secondary);
   h1 {
-    line-height: var(--line-height-small);
-    @include breakpoint("large", min-width) {
-      font-size: 4em;
-    }
+    font-size: 2.5rem;
+	color: #ffffff;
   }
   p {
-    margin-top: 0.5em;
-    margin-bottom: 2em;
-    @include breakpoint("large", min-width) {
-      font-size: var(--font-up-1);
-    }
+    color: #e5e5e8;
+    margin-bottom: 1em;
   }
   .btn {
     height: 100%;
@@ -37,11 +31,12 @@
     }
   }
   .search-menu .search-input {
-    border-color: var(--tertiary-hover);
-    outline: 1px solid var(--tertiary-hover);
+    // border-color: var(--tertiary-hover);
+    // outline: 1px solid var(--tertiary-hover);
+    border-radius: 2rem;
   }
   .results {
-    top: 43px;
+    top: 50px;
     border-radius: 0.25em;
   }
   .search-context {
@@ -56,7 +51,7 @@
 
 .display-search-banner {
   #main-outlet {
-    padding-top: 2em;
+    padding-top: 0;
   }
 }
 
@@ -64,7 +59,7 @@
 // but this ensures the default works too
 .above-main-container-outlet.search-banner {
   .custom-search-banner-wrap {
-    padding: 1em 0 2em;
+    padding: 3em 0 0 0;
     color: var(--tertiary);
     .mobile-view & {
       color: var(--secondary);
@@ -180,6 +175,7 @@ div.ac-wrap {
 }
 .d-header {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
 }
 
 .d-header-icons .d-icon {
@@ -270,12 +266,7 @@ html {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(
-      90deg,
-      var(--tertiary-hover) 0%,
-      var(--tertiary) 100%
-    );
-    clip-path: ellipse(148% 70% at 91% -14%);
+    background: #f2f2f5;
   }
   body.no-ember .background-container {
     display: none;
@@ -351,6 +342,7 @@ html body #main-outlet {
     display: contents;
     .topic-list-data.default {
       width: 63%;
+      padding-left: 8%;
     }
     .topic-list-data.posters {
       width: 7%;
@@ -373,14 +365,15 @@ html body #main-outlet {
       }
     }
     .topic-list-item {
+      width: 100%;
       display: flex;
       margin-bottom: 0.5em;
       background-color: var(--secondary);
-      border: 1px solid rgba(var(--primary-rgb), 0.2);
+    //   border: 1px solid rgba(var(--primary-rgb), 0.2);
       border-radius: 1em;
       position: relative;
       transition: box-shadow 100ms ease-in-out;
-      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+    //   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
       overflow: hidden;
       &.visited {
         border: 1px solid rgba(var(--primary-rgb), 0.1);
@@ -388,7 +381,7 @@ html body #main-outlet {
           opacity: 0.75;
         }
         &:hover {
-          border: 1px solid rgba(var(--primary-rgb), 0.25);
+        //   border: 1px solid rgba(var(--primary-rgb), 0.25);
           .discourse-tag {
             opacity: 1;
           }
@@ -396,8 +389,8 @@ html body #main-outlet {
       }
       &:hover {
         background-color: var(--secondary);
-        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(var(--primary-rgb), 0.3);
+        // box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+        // border: 1px solid rgba(var(--primary-rgb), 0.3);
         a.title:not(.badge-notification),
         a.topic-excerpt {
           color: var(--primary) !important;
@@ -431,15 +424,6 @@ html body #main-outlet {
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-      &.selected {
-        td:nth-of-type(1) {
-          box-shadow: none;
-        }
-        &:focus-visible td:nth-of-type(2) {
-          box-shadow: inset 3px 0 0 var(--tertiary);
-          border-radius: calc(1em - 3px);
-        }
       }
     }
   }
@@ -529,6 +513,10 @@ html body #main-outlet {
   }
 }
 
+.navigation-container {
+  margin-top: 2em;
+}
+
 // published page additions
 .published-page-content-wrapper {
   max-width: 1000px;
@@ -569,6 +557,20 @@ html body #main-outlet {
   border-radius: 0.5em;
 }
 
+.topic-list tr.selected td:nth-child(2),
+.topic-list-item.selected td:nth-child(2),
+.latest-topic-list-item.selected,
+.search-results .fps-result.selected {
+  box-shadow: inset 3px 0 0 var(--danger);
+}
+
+.topic-list tr.selected td:first-child,
+.topic-list-item.selected td:first-child,
+.latest-topic-list-item.selected,
+.search-results .fps-result.selected {
+  box-shadow: none;
+}
+
 .topic-list .main-link.focused + .posters {
   box-shadow: inset 3px 0 0 var(--tertiary);
 }
@@ -581,6 +583,11 @@ html body #main-outlet {
   padding-left: 14px;
 }
 
-@import "custom-search-banner-customizations";
-@import "custom-content";
-@import "custom-footer";
+.custom-search-banner-wrap .btn.search-icon:not(.has-search-button-text)+.search-menu-container .search-input {
+    padding-left: 1.75em;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .05);
+}
+
+body .custom-search-banner-wrap, body.has-sidebar-page .custom-search-banner-wrap.wrap{
+    padding: 5em 2rem;
+}
