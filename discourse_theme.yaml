@@ -1,0 +1,19 @@
+# ...existing code...
+assets:
+  # List all assets (e.g., images, fonts) here
+  - assets/images/icon-blog.svg
+  - assets/images/icon-knowledge.svg
+  - assets/images/icon-release.svg
+  # ...existing code...
+javascripts:
+  # List all JavaScript files here
+  - discourse/initializers/customize.js
+  - discourse/components/adduser.js
+  - discourse/components/category-list.js
+  # ...existing code...
+hbs:
+  # List all Handlebars templates here
+  - discourse/connectors/above-main-container/custom-homepage-connector.hbs
+  - discourse/components/adduser.hbs
+  - discourse/components/cards.hbs
+  # ...existing code...
