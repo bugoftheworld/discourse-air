@@ -3,9 +3,11 @@ name: Discourse Theme
 on:
   push:
     branches:
-      - main
+      - transfer-to-fork-main
   pull_request:
+    branches:
+      - transfer-to-fork-main
 
 jobs:
   ci:
-    uses: discourse/.github/.github/workflows/discourse-theme.yml@v1
+    uses: bugoftheworld/.github/.github/workflows/discourse-theme.yml@main
